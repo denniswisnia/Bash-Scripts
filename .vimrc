@@ -1,6 +1,6 @@
 "vim.rc by Dennis Wisnia
 "http://dennis-wisnia.de/wordpress
-"Version: 0.3
+"Version: 0.4
 let &t_Co=256
 "Color Themes
 if has("gui_running") 
@@ -24,6 +24,15 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set tabstop=4
+
+"Remaps
+"Page Up/Down
+nmap <PageUp> <C-K>
+nmap <PageDown> <C-J>
+
+"Git
+set laststatus=2
+set statusline=%{GitBranch()}
 
 "Sudo Vergessen Fix
 cmap w!! %!sudo tee &gt; /dev/null %:
