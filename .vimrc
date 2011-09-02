@@ -32,8 +32,22 @@ nmap <PageDown> <C-J>
 
 "Git
 set laststatus=2
-set statusline=%{GitBranch()}
+" Format the statusline
+set statusline=%{GitBranch()}\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
+
+function! CurDir()
+    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+    return curdir
+endfunction
+
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    else
+        return ''
+    endif
+endfunction
 "Sudo Vergessen Fix
 cmap w!! %!sudo tee &gt; /dev/null %:
 colorscheme wombat  
