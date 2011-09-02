@@ -1,0 +1,27 @@
+++++++++++++++++++++++++++++++
++       VIM CONFIG           +
+++++++++++++++++++++++++++++++
+
+++++++
+Meine .vimrc die stetig erweitert wird.
+
+
+++++
+0.1
+Initial Release
+
+0.2
+Theme + Colors + Syntax Highlighting
+
+0.3
+Some new Options in the vim.rc
+    -set ruler
+    -set wildmenu
+    -set autoindent
+    -set smartindent
+    -set shiftwidth=4
+    -set softtabstop=4
+    -set expandtab
+    -set tabstop=4
+
+Spaces insead of Tabs

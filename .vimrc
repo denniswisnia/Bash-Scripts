@@ -1,3 +1,6 @@
+"vim.rc by Dennis Wisnia
+"http://dennis-wisnia.de/wordpress
+"Version: 0.3
 let &t_Co=256
 "Color Themes
 if has("gui_running") 
