@@ -40,7 +40,7 @@ else
 endif
 
 function! CurDir()
-    let curdir = substitute(getcwd(), "~/", "g")
+    let curdir = substitute(getcwd(), "/home/dennis", "~/", "g")
     return curdir
 endfunction
 
