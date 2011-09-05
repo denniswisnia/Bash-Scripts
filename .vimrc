@@ -29,10 +29,13 @@ set tabstop=4
 
 "Backup und TMP Dir
 set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+set backupdir=$HOME/.vim/backup/
+set directory=$HOME/.vim/tmp/
+set viewdir=$HOME/.vim/view/
 
-
+silent execute '!mkdir -p $HOME/.vim/backup'
+silent execute '!mkdir -p $HOME/.vim/tmp'
+silent execute '!mkdir -p $HOME/.vim/views'
 "Remaps
 "Page Up/Down
 
