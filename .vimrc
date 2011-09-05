@@ -15,8 +15,10 @@ endif
 
 " Zeile / Spalte anzeigen
 set ruler
+
 "Vervollständigungsmenü
 set wildmenu
+
 "Zeileneinrückung / Tab durch Leerzeichen ersetzen
 set autoindent
 set smartindent
@@ -25,15 +27,29 @@ set softtabstop=4
 set expandtab
 set tabstop=4
 
+"Backup und TMP Dir
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
+
 "Remaps
 "Page Up/Down
-nmap <PageUp> <C-K>
-nmap <PageDown> <C-J>
 
 "Git
 set laststatus=2
 " Format the statusline
-if has ("git")
+fun! SearchInPath(prog)
+    let components = split($PATH, ":")
+    for c in components
+        if executable(c . "/" . a:prog)
+            return 1
+        endif
+    endfor
+    return 0
+endfun
+
+if SearchInPath("git")
     set statusline=%{GitBranch()}\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 else
     set statusline=%{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
@@ -52,5 +68,5 @@ function! HasPaste()
     endif
 endfunction
 "Sudo Vergessen Fix
-cmap w!! %!sudo tee &gt; /dev/null %:
+cmap w!! %!sudo tee > /dev/null %
 colorscheme wombat  
