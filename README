@@ -24,4 +24,4 @@ Some new Options in the vim.rc
     -set expandtab
     -set tabstop=4
 
-Spaces insead of Tabs
+Spaces instead of Tabs

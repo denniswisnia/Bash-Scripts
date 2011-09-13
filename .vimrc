@@ -15,7 +15,7 @@ endif
 
 " Zeile / Spalte anzeigen
 set ruler
-
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 "Vervollständigungsmenü
 set wildmenu
 
@@ -70,6 +70,7 @@ function! HasPaste()
         return ''
     endif
 endfunction
-"Sudo Vergessen Fix
+"misc
 cmap w!! %!sudo tee > /dev/null %
+filetype plugin on
 colorscheme wombat  
